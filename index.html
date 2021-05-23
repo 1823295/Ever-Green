@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+    <script src="./main.js"></script>
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="#page-top">Ever Green</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto text-uppercase">
+                    
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link " href="./admin/register.html">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image:url('assets/img/header-bg.jpg');">
+        <div class="container">
+            <div class="intro-text">
+                <div style="font-weight: 500; font-size:30px;"><span>Welcome To Our Meal Generator!</span></div>
+                <div style="font-weight: 800; font-size:40px;"class="intro-heading text-uppercase"><span>Create your meal plan right here in seconds</span>
+                </div><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="#services">Do it Now</a>
+            </div>
+        </div>
+    </header>
+    <section id="services" style="padding-bottom: 80px;text-align: center;">
+        <div class="container">
+            <div id="test" class="row" style="text-align: center;">
+                <div class="col " style="text-align: center; cursor: pointer;" tabindex="5" onclick="handleClick('anything', this)"><img src="assets/img/s-removebg-preview.png" style="text-align: center;">
+                    <p class="text-center" style="text-align: left;">Anything</p>
+                </div>
+                <div class="col " style="text-align: center; cursor: pointer;" tabindex="2" onclick="handleClick('paleo', this)"><img src="assets/img/p-removebg-preview.png" style="text-align: center;">
+                    <p>Paleo</p>
+                </div>
+                <div class="col " style="cursor: pointer;" tabindex="3" onclick="handleClick('vegetarian', this)"><img src="assets/img/v-removebg-preview.png">
+                    <p>Vegetarian</p>
+                </div>
+                <div class="col " style="cursor: pointer;" tabindex="4" onclick="handleClick('vegan', this)"><img src="assets/img/veg-removebg-preview.png">
+                    <p>Vegan</p>
+                </div>
+                <div class="col" style="cursor: pointer;" tabindex="5" onclick="handleClick('ketogenic', this)"><img src="assets/img/ke-removebg-preview.png">
+                    <p>Ketogenic</p>
+                </div>
+                <div class="col" style="cursor: pointer;" tabindex="6" onclick="handleClick('mediterranean', this)"><img src="assets/img/me-removebg-preview.png">
+                    <p>Mediterranean</p>
+                </div>
+            </div>
+            <div class="row text-center" style=" margin-left: 100px; padding: 20px;">
+                <div class="col" style="margin-right: -15px;">
+                    <p class="text-right">I want to eat</p>
+                </div>
+                <div class="col text-left"><input type="number" id="target"></div>
+                <div class="col text-left">
+                    <p style="margin-left: -80px;">Calories</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            
+            <a id="services" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="#planner" onclick="generateMeal()">Generate</a>
+
+            
+        </div>
+    </section>
+    <div class="container">
+        
+        <div class="row">
+            <div class="col" style=" font-size: 30px; padding-left: 330px; padding-bottom: 20px; ">
+                <p id="planner" style="border-bottom: 1px solid gray;">Today's Meal Plan</p>
+            </div>
+            <div onclick="generateMeal()" style="cursor: pointer; margin-right: 120px; padding-top: 15px; "> 
+                <span style="color: gray; padding-right: 10px; "> Regenerate </span>
+                <i class="fa fa-refresh"></i>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col" id="pi" style=" font-size: 30px; padding-left: 330px; padding-bottom: 20px; ">
+                <i id="pi" class=""></i>
+            </div>
+            <div class="col " id="destination" style="font-size: 20px;"></div>
+        </div>
+        <div id="anything-1" class="col">
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal"><img class="shadow-sm" src="assets/img/Breakfast-1.png" style="border-radius: 5%;text-align: center;" data-toggle="modal" data-target="#exampleModal">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="assets/img/breakfast-details(1)%20(1).png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-2"><img class="shadow-sm" src="assets/img/Lunch-1.png" style="width: 488px;margin-top: 15px;border-radius: 5%;" data="">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-2" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="assets/img/Tuna.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-3"><img class="shadow-sm" src="assets/img/Dinner-1.png" style="width: 488px;margin-top: 15px;border-radius: 5%;padding-top: 10px;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-3" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="assets/img/Pasta%20(1).png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-5"><img class="shadow-sm" src="assets/img/snak-1.png" style="width: 488px;margin-top: 15px;border-top-left-radius: 5%;border-top-right-radius: 5%;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-5" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="assets/img/Grapes%20(2).png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="anything-2" class="col d-none">
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-6"><img class="shadow-sm" src="assets/img/brak.png" style="border-radius: 5%;text-align: center;width: 488px;margin-top: 10px;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-6" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="assets/img/brak-d.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-7"><img class="shadow-sm" src="assets/img/lun.png" style="width: 488px;margin-top: 15px;border-radius: 5%;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-7" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="assets/img/lin-d.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-8"><img class="shadow-sm" src="assets/img/din.png" style="width: 488px;margin-top: 15px;border-radius: 5%;padding-top: 10px;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-8" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="assets/img/din-d.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-9"><img class="shadow-sm" src="assets/img/snak.png" style="width: 488px;margin-top: 15px;border-top-left-radius: 5%;border-top-right-radius: 5%;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-9" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="assets/img/snak-d.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="paleo-1" class="col d-none">
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-10"><img class="shadow-sm" src="First Generate/breakfast_SS.png" style="border-radius: 5%;text-align: center;" data-toggle="modal" data-target="#exampleModal">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-10" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="First Generate/breakfast_full_page.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-11"><img class="shadow-sm" src="First Generate/Lunch_SS.png" style="width: 488px;margin-top: 15px;border-radius: 5%;" data="">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-11" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="First Generate/Lunch full_page.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-12"><img class="shadow-sm" src="First Generate/Dinner_SS_1.png" style="width: 488px;margin-top: 15px;border-radius: 5%;padding-top: 10px;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-12" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="First Generate/dinner full_page.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-13"><img class="shadow-sm" src="First Generate/Snack_SS_1.png" style="width: 488px;margin-top: 15px;border-top-left-radius: 5%;border-top-right-radius: 5%;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-13" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="First Generate/Snack_full page_1.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+        <div id="paleo-2" class="col d-none">
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-16"><img class="shadow-sm" src="Second Generate/Breakfast_SS.png" style="border-radius: 5%;text-align: center;width: 488px;margin-top: 10px;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-16" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="Second Generate/Breakfast_full page.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-17"><img class="shadow-sm" src="Second Generate/Lunch_SS.png" style="width: 488px;margin-top: 15px;border-radius: 5%;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-17" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="Second Generate/Lunch_full page.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-18"><img class="shadow-sm" src="Second Generate/Dinner_SS.png" style="width: 488px;margin-top: 15px;border-radius: 5%;padding-top: 10px;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-18" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="Second Generate/Dinner_full page.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-19"><img class="shadow-sm" src="Second Generate/Snack_SS.png" style="width: 488px;margin-top: 15px;border-top-left-radius: 5%;border-top-right-radius: 5%;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-19" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="Second Generate/Snack_full page.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="vegetarian-1" class="col d-none">
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-20"><img class="shadow-sm" src="1st Generate/B1_ss.png" style="width: 488px; border-radius: 5%;text-align: center;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-20" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="1st Generate/B1_full ss.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-21"><img class="shadow-sm" src="1st Generate/L1_ss.png" style="width: 488px;margin-top: 15px;border-radius: 5%;" data="">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-21" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="1st Generate/L_full ss.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-22"><img class="shadow-sm" src="1st Generate/D_ss.png" style="width: 488px;margin-top: 15px;border-radius: 5%;padding-top: 10px;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-22" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="1st Generate/D_full ss.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-23"><img class="shadow-sm" src="1st Generate/Snack_ SS.png" style="width: 488px;margin-top: 15px;border-top-left-radius: 5%;border-top-right-radius: 5%;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-23" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="1st Generate/Snack_ Full SS.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="vegetarian-2" class="col d-none">
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-26"><img class="shadow-sm" src="2nd Generate/Breakfast_ SS.png" style="border-radius: 5%;text-align: center;width: 488px;margin-top: 10px;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-26" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="2nd Generate/Breakfast_ Full SS.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-27"><img class="shadow-sm" src="2nd Generate/Lunch 1 _ SS.png" style="width: 488px;margin-top: 15px;border-radius: 5%;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-27" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="2nd Generate/Lunch 1_ Full SS.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-28"><img class="shadow-sm" src="2nd Generate/Dinner_SS.png" style="width: 488px;margin-top: 15px;border-radius: 5%;padding-top: 10px;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-28" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="2nd Generate/Dinner_Full SS.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;" data-toggle="modal" data-target="#exampleModal-29"><img class="shadow-sm" src="2nd Generate/Snack 1_SS.png" style="width: 488px;margin-top: 15px;border-top-left-radius: 5%;border-top-right-radius: 5%;">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="exampleModal-29" style="width: 100%;margin-left: -150px;">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body" style="width: 920px;"><img src="2nd Generate/Snack 1_Full SS.png" style="width: 920px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="team" class="bg-light" style="padding-top: 100px;">
+        
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-sm-3">
+                        <h6>Muhammad Rafiqul Islam(1823295)</h6>
+                        <p class="text-muted">Project Developer</p>
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" style="background-image:url('assets/img/map-image.png');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">Contact Us</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="contactForm" name="contactForm" novalidate="novalidate">
+                        <div class="form-row">
+                            <div class="col col-md-6">
+                                <div class="form-group"><input class="form-control" type="text" id="name" placeholder="Your Name *" required=""><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                <div class="form-group"><input class="form-control" type="email" id="email" placeholder="Your Email *" required=""><small class="form-text text-danger help-block lead"></small></div>
+                                <div class="form-group"><input class="form-control" type="tel" placeholder="Your Phone *" required=""><small class="form-text text-danger help-block lead"></small></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group"><textarea class="form-control" id="message" placeholder="Your Message *" required=""></textarea><small class="form-text text-danger help-block lead"></small></div>
+                            </div>
+                            <div class="col">
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div><button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><span class="copyright">Copyright&nbsp;© Ever Green 2021</span></div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal1">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p><img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1-full.jpg">
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-unstyled">
+                                        <li>Date: January 2017</li>
+                                        <li>Client: Threads</li>
+                                        <li>Category: Illustration</li>
+                                    </ul><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal2">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p><img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2-full.jpg">
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-unstyled">
+                                        <li>Date: January 2017</li>
+                                        <li>Client: Threads</li>
+                                        <li>Category: Illustration</li>
+                                    </ul><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal3">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p><img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3-full.jpg">
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-unstyled">
+                                        <li>Date: January 2017</li>
+                                        <li>Client: Threads</li>
+                                        <li>Category: Illustration</li>
+                                    </ul><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal4">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p><img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4-full.jpg">
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-unstyled">
+                                        <li>Date: January 2017</li>
+                                        <li>Client: Threads</li>
+                                        <li>Category: Illustration</li>
+                                    </ul><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal5">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p><img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5-full.jpg">
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-unstyled">
+                                        <li>Date: January 2017</li>
+                                        <li>Client: Threads</li>
+                                        <li>Category: Illustration</li>
+                                    </ul><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal6">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <div class="modal-body">
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p><img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6-full.jpg">
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-unstyled">
+                                        <li>Date: January 2017</li>
+                                        <li>Client: Threads</li>
+                                        <li>Category: Illustration</li>
+                                    </ul><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/agency.js"></script>
+</body>
+
+</html>
